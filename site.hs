@@ -2,7 +2,6 @@
 import Data.Monoid (mappend)
 import Data.Maybe (fromJust)
 import System.FilePath.Posix
-import Debug.Trace
 
 import Hakyll
 
@@ -42,14 +41,13 @@ main = hakyll $ do
   match "js/css/*.css" $ do
     -- js/css/y.css -> y/styles.css
     route $ customRoute $ \id -> let fp = toFilePath id
-                                     dir = takeBaseName fp
-                                 in traceShowId ("." </> dir </> "styles.css")
+                                 in "." </> takeBaseName fp </> "styles.css"
 
     compile copyFileCompiler
 
   match "js/js/*.js" $ do
     route $ (metadataRoute $ \m -> let out = fromJust $ lookupString "out" m
-                                   in constRoute ("./" ++ out))
+                                   in constRoute ("." </> out))
     compile getResourceBody
 
   create ["archive.html"] $ do
