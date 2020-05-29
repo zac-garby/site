@@ -67,3 +67,7 @@ img.right {
 div.right {
     text-align: right;
 }
+
+div.right ul {
+    list-style: none;
+}

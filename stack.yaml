@@ -3,3 +3,4 @@ packages:
   - .
 extra-deps:
   - hakyll-4.12.5.2
+  - filepath-1.4.2.1

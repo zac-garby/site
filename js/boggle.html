@@ -1,0 +1,67 @@
+---
+dir: boggle
+title: Boggle
+---
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <link rel="stylesheet" href="boggle/styles.css">
+
+        <title>Boggle</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div>
+                <table class="board">
+                    <tr>
+                        <td id="cell-00">&nbsp;</td>
+                        <td id="cell-10">&nbsp;</td>
+                        <td id="cell-20">&nbsp;</td>
+                        <td id="cell-30">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td id="cell-01">&nbsp;</td>
+                        <td id="cell-11">&nbsp;</td>
+                        <td id="cell-21">&nbsp;</td>
+                        <td id="cell-31">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td id="cell-02">&nbsp;</td>
+                        <td id="cell-12">&nbsp;</td>
+                        <td id="cell-22">&nbsp;</td>
+                        <td id="cell-32">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td id="cell-03">&nbsp;</td>
+                        <td id="cell-13">&nbsp;</td>
+                        <td id="cell-23">&nbsp;</td>
+                        <td id="cell-33">&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
+    
+            <div>
+                <p id="time">--:--</p>
+                <input type="text" id="word-input" placeholder="Enter a word">
+    
+                <ul id="words"></ul>
+            </div>
+
+            <div id="results">
+                <h1>Results:</h1>
+
+                <p>You got <span id="n-words">11</span> out of a possible <span id="p-words">19</span> words, which is <span id="percentage">58</span>%.</p>
+
+                <p>Red indicates a word that you didn't get, green is one that you did.</p>
+
+                <ul id='all-words'></ul>
+            </div>
+        </div>
+    </body>
+    <script src="boggle/words.js"></script>
+    <script src="boggle/main.js"></script>
+</html>

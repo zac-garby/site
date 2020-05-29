@@ -1,0 +1,51 @@
+---
+dir: 2d
+title: 2D Colour Grapher
+---
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="2d/styles.css">
+        <title>2D Colour Grapher</title>
+    </head>
+    <body>
+        <div>
+            <h1>2D Colour Grapher</h1>
+            <p>Enter the <var>x</var> and <var>y</var> parts a function in terms of <var>x</var> and <var>y</var> and press the button below. It will be plotted on the canvas below, with each pixel's colour being calculated by some simple rules. The hue is the angle of the point from the x-axis, and the brightness is the distance away from the origin. You can also imagine this as the function mapping each point from the domain to a corresponding point on a colour wheel. Black always means a magnitude of <var>0</var>, but the brightness is normalized by dividing each magnitude by the maximum magnitude.</p>
+            <p>This can get some pretty cool-looking graphs :) Keep in mind that the function is evaluated for each pixel, which is 262,144 times, so don't do anything <em>too</em> resource-intensive. Also, these equations are interpreted as plain Javascript, so you can use all the standard functions you want. A few functions have shorthands defined, for example <var>sin(x)</var> instead of <var>Math.sin(x)</var>.</p>
+            <p>As for what looks cool: trig functions and polynomials both tend to work pretty well. Also try <var>x = sin((x*5) * (x*5) + (y*5) * (y*5))</var>, <var>y = cos((x*5) * (x*5) + (y*5) * (y*5))</var>.</p>
+        </div>
+        <div>
+            <table class="input">
+                <tr>
+                    <td class="label"><em>f</em>(<var>x</var>, <var>y</var>)<span class="sub">x</span> =</td>
+                    <td><input id="fx" type="text" placeholder="?"></td>
+                </tr>
+                <tr>
+                    <td class="label"><em>f</em>(<var>x</var>, <var>y</var>)<span class="sub">y</span> =</td>
+                    <td><input id="fy" type="text" placeholder="?"></td>
+                </tr>
+                <tr>
+                    <td class="label"><var>pixels per unit</var> =</td>
+                    <td><input type="number" id="ppu" value="32"></td>
+                </tr>
+                <tr>
+                    <td class="label"><var>transform<span class="sub">x</span></var> =</td>
+                    <td><input type="number" id="trx" value="0"></td>
+                </tr>
+                <tr>
+                    <td class="label"><var>transform<span class="sub">y</span></var> =</td>
+                    <td><input type="number" id="try" value="0"></td>
+                </tr>
+            </table>
+            
+            <button id='plot-btn'>Plot!</button>
+
+            <canvas id="out" width="512" height="512"></canvas>
+        </div>
+    </body>
+    <script src="2d/main.js"></script>
+</html>

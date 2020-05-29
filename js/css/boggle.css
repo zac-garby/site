@@ -1,0 +1,74 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+table.board {
+    table-layout: fixed;
+    border-spacing: 0;
+    border: 1px solid black;
+    padding: 4px;
+}
+
+td {
+    width: 22px;
+    height: 25px;
+    font-size: 18px;
+    text-align: center;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+input#word-input {
+    width: 200px;
+    margin-top: 5px;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 15pt;
+}
+
+div.wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+div.wrapper > * {
+    padding: 15px;
+}
+
+p#time {
+    font-size: 15pt;
+    margin-top: 0;
+    font-weight: bold;
+}
+
+ul#words {
+    padding-left: 10px;
+    list-style: none;
+}
+
+div#results {
+    display: none;
+}
+
+div#results h1 {
+    font-size: 15pt;
+    margin-top: 0;
+}
+
+ul#all-words {
+    column-count: 8;
+    column-gap: 10px;
+    list-style: none;
+    padding-left: 5px;
+}
+
+li.didnt-get {
+    color: red;
+}
+
+li.did-get {
+    background-color: green;
+    color: white;
+    padding-left: 3px;
+    padding-right: 3px;
+}

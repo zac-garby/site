@@ -1,0 +1,29 @@
+---
+dir: gkbd
+title: Guitar Audio &rarr; Keyboard Input
+---
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Guitar Keyboard</title>
+        <style>
+            textarea {
+                padding: 5px;
+                font-size: 15pt;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Guitar Keyboard</h1>
+        <p>This site listens through your selected input device (if you have a guitar interface, I recommend you use that), and converts the raw PCM data first into frequency, averaged over a number of samples. These frequencies are converted into note indices, where going up one fret increases the index by one. These are averaged over a number of samples too, and the average is converted into its corresponding ASCII character.</p>
+        <p>Unless your guitar is tuned differently, the lowest note (open E) will be character code 65: "A". Although, it's very precarious so it might be something completely different. It seems to work better with a pick, too. I mean really, it's a bit rubbish - it doesn't work almost at all, but when it does it's quite cool :)</p>
+        <p>If you want to actually write something, the digits seem start on fret 2 on the E string and the capital letters start on the G string, fret 4. But again, this is very tempramental...</p>
+        <p>Note: <span id="note">-</span></p>
+        <textarea id="out" placeholder="Your output" rows=20 cols=70></textarea>
+        <p>Made by Zac Garby. <a href="https://zacgarby.co.uk">Go to my homepage!</a></p>
+    </body>
+    <script src="gkbd/main.js"></script>
+</html>

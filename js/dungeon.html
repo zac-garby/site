@@ -1,0 +1,59 @@
+---
+dir: dungeon
+title: Dungeon Generation
+---
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Dungeon Generation</title>
+
+        <link rel="stylesheet" href="dungeon/styles.css">
+    </head>
+    <body>
+        <div class="left">
+            <h1>Generating a dungeon system using Prim's Algorithm</h1>
+            <p>For each point on a grid covering the entire canvas, a node is placed at each point randomly. A minimum spanning tree is found and rooms are placed on each node based on an inverse exponential probability distribution.</p>
+            <p>Press the button to make a dungeon, or click on the canvas to manually place a node.</p>
+
+            <button onclick="randomGrid()">Make one!</button>
+            <br>
+            <br>
+            <canvas id="canvas" width="512" height="512"></canvas>
+            <br>
+            <p>Made by <a href="https://zacgarby.co.uk">Zac Garby</a></p>
+        </div>
+        <div id="inputs">
+            <h1>Options</h1>
+
+            <form id="options" action="">
+                <p>
+                    Road width:
+                    <input type="number" name="roadWidth" id="roadWidth" value="4">
+                </p>
+                <p>
+                    Room radius:
+                    <input type="number" name="roomRadius" id="roomRadius" value="8">
+                    ± <input type="number" name="roomRadiusVariance" id="roomRadiusVariance" value="4" step="0.5">
+                </p>
+                <p>
+                    Grid spacing:
+                    <input type="number" name="gridSpacing" id="gridSpacing" value="32" step="8">
+                </p>
+                <p>
+                    Node chance:
+                    <input type="number" name="nodeChance" id="nodeChance" value="0.5" step="0.1">
+                </p>
+                <p>
+                    Room probability coefficient:
+                    <input type="number" name="roomProbCoefficient" id="roomProbCoefficient" value="-1.1" step="0.1">
+                </p>
+            </form>
+
+            <button onclick="render()">Redraw</button>
+        </div>
+    </body>
+    <script src="dungeon/main.js"></script>
+</html>
