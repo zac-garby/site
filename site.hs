@@ -15,12 +15,6 @@ main = hakyll $ do
     route   idRoute
     compile compressCssCompiler
   
-  match (fromList ["about.rst", "contact.markdown", "about.html"]) $ do
-    route   $ setExtension "html"
-    compile $ do
-      pandocCompiler
-        >>= loadAndApplyTemplate "templates/default.html" defaultContext
-        >>= relativizeUrls
 
   match "posts/*" $ do
     route $ setExtension "html"
@@ -49,6 +43,13 @@ main = hakyll $ do
     route $ (metadataRoute $ \m -> let out = fromJust $ lookupString "out" m
                                    in constRoute ("." </> out))
     compile getResourceBody
+
+  create ["about.html"] $ do
+    route idRoute
+    compile $ makeItem ""
+      >>= loadAndApplyTemplate "templates/about.html" defaultContext
+      >>= loadAndApplyTemplate "templates/default.html" defaultContext
+      >>= relativizeUrls
 
   create ["archive.html"] $ do
     route idRoute
