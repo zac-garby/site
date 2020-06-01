@@ -45,6 +45,7 @@ section.header {
 
 div.row {
     margin-bottom: 20px;
+    padding: 0 20px;
     min-height: 200px;
 }
 
@@ -57,11 +58,13 @@ img.left, img.right {
 img.left {
     float: left;
     margin-right: 35px;
+    margin-left: -20px;
 }
 
 img.right {
     float: right;
     margin-left: 35px;
+    margin-right: -20px;
 }
 
 div.right {
