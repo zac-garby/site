@@ -46,10 +46,13 @@ main = hakyll $ do
 
   create ["about.html"] $ do
     route idRoute
-    compile $ makeItem ""
-      >>= loadAndApplyTemplate "templates/about.html" defaultContext
-      >>= loadAndApplyTemplate "templates/default.html" defaultContext
-      >>= relativizeUrls
+    compile $ do
+      let aboutCtx = constField "title" "About" <> defaultContext
+      
+      makeItem ""
+        >>= loadAndApplyTemplate "templates/about.html" aboutCtx
+        >>= loadAndApplyTemplate "templates/default.html" aboutCtx
+        >>= relativizeUrls
 
   create ["archive.html"] $ do
     route idRoute
