@@ -2,6 +2,11 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
+h1, p {
+    margin-left: 15px;
+    width: 450px;
+}
+
 table.board {
     table-layout: fixed;
     border-spacing: 0;
