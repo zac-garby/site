@@ -1,7 +1,11 @@
 {-# LANGUAGE OverloadedStrings #-}
+
+import qualified Data.Set as S
+
 import Data.Monoid (mappend)
 import Data.Maybe (fromJust)
 import System.FilePath.Posix
+import Text.Pandoc.Options
 
 import Hakyll
 
@@ -18,7 +22,7 @@ main = hakyll $ do
 
   match "posts/*" $ do
     route $ setExtension "html"
-    compile $ pandocCompiler
+    compile $ mathsCompiler
       >>= loadAndApplyTemplate "templates/post.html"    postCtx
       >>= loadAndApplyTemplate "templates/default.html" postCtx
       >>= relativizeUrls
@@ -91,3 +95,11 @@ postCtx :: Context String
 postCtx =
     dateField "date" "%B %e, %Y" <>
     defaultContext
+
+mathsCompiler =
+  let mathsExt = [Ext_tex_math_dollars, Ext_smart]
+      defaultExt = writerExtensions defaultHakyllWriterOptions
+      newExt = defaultExt <> extensionsFromList mathsExt
+      writerOptions = defaultHakyllWriterOptions { writerExtensions = newExt,
+                                                   writerHTMLMathMethod = MathJax "" }
+  in pandocCompilerWith defaultHakyllReaderOptions writerOptions

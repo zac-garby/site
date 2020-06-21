@@ -1,8 +1,11 @@
 <article>
-    <section class="header">
-        Posted on $date$
-    </section>
-    <section>
-        $body$
-    </section>
+  <section class="header">
+    $if(banner)$
+    <img class="banner" src="$banner$" width="100%" />
+    $endif$
+    <span class="date">Posted on $date$</span>
+  </section>
+  <section>
+    $body$
+  </section>
 </article>

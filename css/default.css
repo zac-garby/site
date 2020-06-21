@@ -74,3 +74,99 @@ div.right {
 div.right ul {
     list-style: none;
 }
+
+article img {
+    display: block;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 90%;
+}
+
+img.banner {
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 100%;
+    image-rendering: crisp-edges;
+}
+
+article {
+    font-size: 0.95rem;
+    width: 120%;
+    position: relative;
+    left: -10%;
+}
+
+span.date {
+    font-style: italic;
+    color: #555;
+}
+
+article h1 {
+    font-size: 15pt;
+}
+
+article h2 {
+    font-size: 14pt;
+    padding-left: 8px;
+}
+
+pre {
+    line-height: 1.25em;
+    background-color: #f5f5f5;
+    padding: 7px;
+    border: 1px solid #aaa;
+    overflow-x: scroll;
+}
+
+code {
+    font-size: 0.95em;
+    padding-left: 2px;
+    padding-right: 2px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #aaa;
+    font-family: monospace;
+}
+
+pre code {
+    padding: 0;
+    border: none;
+}
+
+pre span {
+    font-family: monospace;
+    color: #222;
+}
+
+span.kw {
+    font-weight: bold;
+    color: black;
+}
+
+span.dt {
+    font-style: italic;
+    color: black;
+}
+
+span.op {
+    color: grey;
+}
+
+span.ot {
+    color: black;
+    font-weight: bold;
+}
+
+span.co {
+    font-style: italic;
+    color: #aaa;
+}
+
+span.st {
+    font-style: italic;
+    color: #555;
+}
+
+span.fu {
+    color: #161;
+}
