@@ -14,10 +14,15 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: test
-      run: ls
+    - name: build
+      uses: ynishi/github-actions-stack-docker-action@v1.1
+      with:
+        command: "build"
+    
+    - name: build-site
+      run: stack exec site build
 
-    - name: ftp-action
+    - name: ftp-upload
       uses: sebastianpopp/ftp-action@v2.0.0
       with:
         host: ${{ secrets.HOST }}
