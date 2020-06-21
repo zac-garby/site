@@ -17,9 +17,9 @@ jobs:
     - name: ftp-action
       uses: sebastianpopp/ftp-action@v2.0.0
       with:
-        host: ${{ secrets.FTP_HOST }}
-        user: ${{ secrets.FTP_USER }}
-        password: ${{ secrets.FTP_PASSWORD }}
+        host: ${{ secrets.HOST }}
+        user: ${{ secrets.USER }}
+        password: ${{ secrets.PASSWORD }}
         forceSsl: true
         localDir: "_site"
         remoteDir: "www"
