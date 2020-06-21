@@ -14,15 +14,25 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: build
-      uses: ynishi/github-actions-stack-docker-action@v1.1
-      with:
-        command: "build"
+    - name: Setup Stack
+      uses: mstksg/setup-stack@v1
     
-    - name: build-site
+    - name: Install Dependencies
+      run: |
+        set -ex
+        stack --no-terminal --install-ghc --only-dependencies
+        set +ex
+    
+    - name: Build Haskell
+      run: |
+        set -ex
+        stack --no-terminal build
+        set +ex
+    
+    - name: Build Site
       run: stack exec site build
 
-    - name: ftp-upload
+    - name: Upload Files
       uses: sebastianpopp/ftp-action@v2.0.0
       with:
         host: ${{ secrets.HOST }}
