@@ -17,13 +17,7 @@ jobs:
     - name: Setup Stack
       uses: mstksg/setup-stack@v1
     
-    - name: Install Dependencies
-      run: |
-        set -ex
-        stack --no-terminal --install-ghc --only-dependencies
-        set +ex
-    
-    - name: Build Haskell
+    - name: Build Static-site Compiler
       run: |
         set -ex
         stack --no-terminal build
