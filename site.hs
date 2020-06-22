@@ -18,7 +18,10 @@ main = hakyll $ do
   match "css/*" $ do
     route   idRoute
     compile compressCssCompiler
-  
+
+  match "404.html" $ do
+    route idRoute
+    compile copyFileCompiler
 
   match "posts/*" $ do
     route $ setExtension "html"
