@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Setup Stack
+      uses: mstksg/setup-stack@v1
+    
+    - name: Build Static-site Compiler
+      run: |
+        set -ex
+        stack --no-terminal build
+        set +ex
+    
+    - name: Build Site
+      run: stack exec site build
+
+    - name: Upload Files
+      uses: sebastianpopp/ftp-action@v2.0.0
+      with:
+        host: ${{ secrets.HOST }}
+        user: ${{ secrets.USER }}
+        password: ${{ secrets.PASSWORD }}
+        localDir: "_site"
+        remoteDir: "www"
