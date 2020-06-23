@@ -33,4 +33,4 @@ jobs:
         user: ${{ secrets.USER }}
         password: ${{ secrets.PASSWORD }}
         localDir: "_site"
-        remoteDir: "www"
+        remoteDir: "/"
