@@ -14,18 +14,21 @@ header {
 }
 
 nav {
-    text-align: right;
+    text-align: center;
 }
 
-nav a, div.logo a {
+nav a {
     font-size: 1.2rem;
     text-decoration: none;
     color: #a52717;
     margin: 0 10px;
 }
 
-div.logo {
-    float: left;
+a.logo {
+    width: 356px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 footer {
