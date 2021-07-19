@@ -3,3 +3,4 @@ _site
 dist*
 .stack-work
 *~
+.DS_Store

@@ -84,6 +84,24 @@ article img {
     right: 0;
     margin: auto;
     max-width: 90%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+article figure {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+article figure img {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+article figcaption {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 9pt;
 }
 
 img.banner {
@@ -100,18 +118,29 @@ article {
     left: -10%;
 }
 
+article p {
+    line-height: 1.4;
+    margin-top: 5px;
+}
+
 span.date {
     font-style: italic;
     color: #555;
 }
 
+article h1.post-title {
+    font-size: 20pt;
+    text-align: center;
+}
+
 article h1 {
     font-size: 15pt;
+    margin-bottom: 0;
 }
 
 article h2 {
-    font-size: 14pt;
-    padding-left: 8px;
+    font-size: 12pt;
+    margin-bottom: 0;
 }
 
 pre {
