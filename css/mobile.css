@@ -1,0 +1,20 @@
+@media only screen and (max-width: 768px) {
+
+div.row {
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+img.left, img.right {
+    display: none;
+}
+
+div.right {
+    text-align: left;
+}
+
+div.right ul {
+    list-style-type: disc;
+}
+
+}

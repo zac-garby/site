@@ -5,6 +5,7 @@
 
 body {
     width: 40rem;
+    max-width: 90%;
     margin: 50px auto;
 }
 
@@ -50,24 +51,15 @@ div.row {
     margin-bottom: 20px;
     padding: 0 20px;
     min-height: 200px;
+    display: flex;
+    justify-content: space-between;
 }
 
 img.left, img.right {
     width: 200px;
     height: 200px;
+    margin: 20px;
     display: block;
-}
-
-img.left {
-    float: left;
-    margin-right: 35px;
-    margin-left: -20px;
-}
-
-img.right {
-    float: right;
-    margin-left: 35px;
-    margin-right: -20px;
 }
 
 div.right {
@@ -113,9 +105,7 @@ img.banner {
 
 article {
     font-size: 0.95rem;
-    width: 120%;
-    position: relative;
-    left: -10%;
+    width: 100%;
 }
 
 article p {
